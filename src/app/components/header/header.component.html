@@ -1,0 +1,25 @@
+<header class="header">
+  <div class="header-container">
+    <div class="logo-container">
+      <h1 class="logo">MiApp</h1>
+    </div>
+
+    <!-- Botón hamburguesa para móvil -->
+    <button class="menu-toggle" (click)="toggleMenu()">
+      <span class="menu-icon"></span>
+    </button>
+
+    <nav class="navigation" [class.active]="isMenuOpen">
+      <ul class="nav-list">
+        <li *ngFor="let item of navigationItems">
+          <a [routerLink]="item.path"
+             routerLinkActive="active"
+             [routerLinkActiveOptions]="{exact: true}"
+             (click)="isMenuOpen = false">
+            {{item.label}}
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
