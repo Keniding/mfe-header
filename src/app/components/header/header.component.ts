@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NavigationItem } from '../../shared/interfaces/navigation.interface';
+import { AwesomeService } from 'awesome';
 
 @Component({
   selector: 'app-header',
@@ -11,6 +12,9 @@ import { NavigationItem } from '../../shared/interfaces/navigation.interface';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+  #sharedService = inject(AwesomeService);
+  message = this.#sharedService.sharedMessage;
+
   navigationItems: NavigationItem[] = [
     { label: 'Inicio', path: '/' },
     { label: 'Productos', path: '/products' },
@@ -22,5 +26,9 @@ export class HeaderComponent {
 
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  updateSignalMessage(): void {
+    this.#sharedService.sharedMessage.set('¡Mensaje actualizado desde el header!');
   }
 }

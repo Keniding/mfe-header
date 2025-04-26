@@ -59,6 +59,20 @@
 
 // Responsive design
 @media (max-width: 768px) {
+  .signal-message-container {
+    flex-direction: column;
+    width: 100%;
+    margin: 1rem 0;
+
+    .signal-button {
+      width: 100%;
+    }
+  }
+
+  .header-container {
+    flex-wrap: wrap;
+  }
+
   .menu-toggle {
     display: block;
     background: none;
@@ -119,6 +133,42 @@
         display: block;
         padding: 0.5rem;
       }
+    }
+  }
+}
+
+.signal-message-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #f8f9fa;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+
+  .signal-text {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+
+    .message {
+      color: #007bff;
+      font-weight: 600;
+    }
+  }
+
+  .signal-button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background: #0056b3;
     }
   }
 }

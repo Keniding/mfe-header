@@ -10,6 +10,9 @@ module.exports = withNativeFederation({
 
   shared: {
     ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
+
+    // mfe-libs import awesome component remote
+    awesome: shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
   },
 
   skip: [
@@ -22,5 +25,5 @@ module.exports = withNativeFederation({
 
   // Please read our FAQ about sharing libs:
   // https://shorturl.at/jmzH0
-  
+
 });

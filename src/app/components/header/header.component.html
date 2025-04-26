@@ -4,6 +4,14 @@
       <h1 class="logo">MiApp</h1>
     </div>
 
+    <!-- Contenedor del mensaje Signal -->
+    <div class="signal-message-container">
+      <p class="signal-text">Signal: <span class="message">{{message()}}</span></p>
+      <button class="signal-button" (click)="updateSignalMessage()">
+        Actualizar Signal
+      </button>
+    </div>
+
     <!-- Botón hamburguesa para móvil -->
     <button class="menu-toggle" (click)="toggleMenu()">
       <span class="menu-icon"></span>
